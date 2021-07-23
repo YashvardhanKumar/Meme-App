@@ -38,9 +38,9 @@ class NewsOnClick : AppCompatActivity() {
         imageUrl = intent.getStringExtra("image")
         url = intent.getStringExtra("url")
         titleText = findViewById(R.id.newsContent)
-        contentText = findViewById(R.id.newsContentDetail)
+        contentText = findViewById(R.id.newsContentDescription)
         val newsimg = findViewById<ImageView>(R.id.newsContentImage)
-        subdesc = findViewById(R.id.newsContentDescription)
+        subdesc = findViewById(R.id.newsContentDetail)
         readNewsButton = findViewById(R.id.newsContentReadNews)
         titleText.text = title
         subdesc.text = desc

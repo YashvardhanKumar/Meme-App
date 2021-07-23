@@ -6,17 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NewsOnClick">
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?actionBarWidgetTheme"
-        app:titleTextColor="@color/orange"
-        app:title="News App" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolBar"
         android:layout_above="@+id/newsContentReadNews">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -62,14 +55,18 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fadingEdge="vertical"
+        android:letterSpacing="0.5"
         android:text="Read Full News"
-        android:background="@color/orange"
-        app:backgroundTint="@color/orange"
-        android:textAllCaps="false"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:background="@color/purple_500"
+        app:backgroundTint="@color/purple_500"
         android:id="@+id/newsContentReadNews"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:textColor="@color/white"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"/>
 

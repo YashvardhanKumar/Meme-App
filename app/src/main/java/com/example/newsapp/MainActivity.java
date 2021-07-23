@@ -3,6 +3,7 @@ package com.example.newsapp;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements CategoryAdaptor.C
     private ArrayList<CategoryModal> categoryModalArrayList;
     private CategoryAdaptor categoryAdaptor;
     private NewsAdapter newsAdapter;
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements CategoryAdaptor.C
             news.setAdapter(newsAdapter);
             category.setAdapter(categoryAdaptor);
             getCategories();
-            getNews("All");
+            getNews("All",true);
             newsAdapter.notifyDataSetChanged();
         }
         private void getCategories () {
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements CategoryAdaptor.C
             categoryModalArrayList.add(new CategoryModal("Health", "https://images.unsplash.com/photo-1463740839922-2d3b7e426a56?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=819&q=80"));
             categoryAdaptor.notifyDataSetChanged();
         }
-        private void getNews (String category){
+        private void getNews (String category,boolean isFirst){
             loading.setVisibility(View.VISIBLE);
             articlesArrayList.clear();
             String categoryURL = "https://newsapi.org/v2/top-headlines?country=in&category=" + category + "&apikey=879c7597063540bca9348fa44223aca8";
@@ -127,6 +127,6 @@ public class MainActivity extends AppCompatActivity implements CategoryAdaptor.C
         @Override
         public void onCategoryClick ( int pos){
             String category = categoryModalArrayList.get(pos).getCategory();
-            getNews(category);
+            getNews(category,false);
         }
     }
