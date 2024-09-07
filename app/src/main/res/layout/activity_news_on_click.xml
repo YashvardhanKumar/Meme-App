@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?actionBarWidgetTheme"
-        app:titleTextColor="@color/orange"
+        app:titleTextColor="@color/black"
         app:title="News App" />
     <ScrollView
         android:layout_width="match_parent"
@@ -63,14 +63,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Read Full News"
-        android:background="@color/orange"
-        app:backgroundTint="@color/orange"
+        android:backgroundTint="@color/black"
         android:textAllCaps="false"
         android:id="@+id/newsContentReadNews"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:textColor="@color/white"
         android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        app:cornerRadius="20dp"
         android:layout_marginBottom="20dp"/>
 
 </RelativeLayout>

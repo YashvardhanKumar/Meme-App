@@ -88,8 +88,8 @@ public class MainActivity extends AppCompatActivity implements CategoryAdaptor.C
         private void getNews (String category){
             loading.setVisibility(View.VISIBLE);
             articlesArrayList.clear();
-            String categoryURL = "https://newsapi.org/v2/top-headlines?country=in&category=" + category + "&apikey=879c7597063540bca9348fa44223aca8";
-            String url = "https://newsapi.org/v2/top-headlines?country=in&excludeDomains=stackoverflow.com&sortBy=publishedAt&language=en&apikey=879c7597063540bca9348fa44223aca8";
+            String categoryURL = "https://newsapi.org/v2/top-headlines?category=" + category + "&apikey=879c7597063540bca9348fa44223aca8";
+            String url = "https://newsapi.org/v2/top-headlines?excludeDomains=stackoverflow.com&sortBy=publishedAt&language=en&apikey=879c7597063540bca9348fa44223aca8";
             String BASE_URL = "https://newsapi.org";
             Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
             RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
